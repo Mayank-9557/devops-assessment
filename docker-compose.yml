@@ -34,13 +34,6 @@ services:
     build: ./frontend
     container_name: react-frontend
     #command: npm run dev -- --host
-    volumes:git reflog
-fd28213 (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: commit: add lock file
-3c2b0af HEAD@{1}: commit: devops-project
-190ba3c HEAD@{2}: pull origin main --rebase (finish): returning to refs/heads/main
-190ba3c HEAD@{3}: pull origin main --rebase (start): checkout 190ba3c8ddf46191d3b377a8c7fae5aa4c063c9d
-7ae7185 HEAD@{4}: clone: from https://github.com/Nexgensis/devops-assessment.git
-
       - ./frontend:/app
       - /app/node_modules
     ports:
