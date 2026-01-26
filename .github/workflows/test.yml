@@ -17,3 +17,8 @@ jobs:
         run: |
           echo Runner is working fine
           touch /tmp/udmishra-jindabad
+
+      - name: start docker compose
+        run: run
+          docker compose down
+          docker compose up -d --build
