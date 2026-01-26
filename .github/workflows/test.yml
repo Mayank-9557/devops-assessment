@@ -31,10 +31,10 @@ jobs:
           docker ps
           
       # 4️⃣ Start Frontend
-      - name: Start Frontend
-        working-directory: frontend
-        run: |
-          echo "Shutting down frontend containers..."
-          docker compose down || true
-          echo "Starting frontend containers..."
-          docker com
+  #    - name: Start Frontend
+  #      working-directory: frontend
+  #     run: |
+  #        echo "Shutting down frontend containers..."
+  #        docker compose down || true
+  #        echo "Starting frontend containers..."
+  #        docker com
