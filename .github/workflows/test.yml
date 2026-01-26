@@ -19,6 +19,6 @@ jobs:
           touch /tmp/udmishra-jindabad
 
       - name: start docker compose
-        run: run
+        run: |
           docker compose down
           docker compose up -d --build
