@@ -16,4 +16,4 @@ jobs:
       - name: Print message
         run: |
           echo Runner is working fine
-          touch /tmp/udmishra jindabad
+          touch /tmp/udmishra-jindabad
