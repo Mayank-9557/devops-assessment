@@ -10,15 +10,31 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      # 1️⃣ Checkout repo
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2️⃣ Test runner
       - name: Print message
         run: |
           echo Runner is working fine
           touch /tmp/udmishra-jindabad
 
-      - name: start docker compose
+      # 3️⃣ Start Backend
+      - name: Start Backend
+        working-directory: backend
         run: |
-          docker compose down
+          echo "Shutting down backend containers..."
+          docker compose down || true
+          echo "Starting backend containers..."
           docker compose up -d --build
+          docker ps
+          
+      # 4️⃣ Start Frontend
+      - name: Start Frontend
+        working-directory: frontend
+        run: |
+          echo "Shutting down frontend containers..."
+          docker compose down || true
+          echo "Starting frontend containers..."
+          docker com
