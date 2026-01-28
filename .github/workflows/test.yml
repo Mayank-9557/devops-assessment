@@ -54,7 +54,7 @@ jobs:
           echo "Shutting down backend containers..."
           docker compose down || true
           echo "Starting backend containers..."
-          docker compose up -d
+          docker-compose up -d
           docker ps
           
       
