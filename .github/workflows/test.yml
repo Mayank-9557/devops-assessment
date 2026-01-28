@@ -39,6 +39,26 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-assessment-frontend:latest
 
+
+         # Start Docker Compose on EC2
+      - name: Start Docker Compose Backend
+        working-directory: backend
+        run: |
+          echo "Stopping existing backend containers..."
+          docker compose down || true
+          echo "Starting backend containers..."
+          docker compose up -d
+          docker ps
+
+      - name: Start Docker Compose Frontend
+        working-directory: frontend
+        run: |
+          echo "Stopping existing frontend containers..."
+          docker compose down || true
+          echo "Starting frontend containers..."
+          docker compose up -d
+          docker ps
+
     
       # 1️⃣ Checkout repo
       - name: Checkout code
